@@ -50,7 +50,7 @@ const PasswordPage = () => {
         </form>
         
         <div className="mt-6 text-center text-sm text-slate-400">
-          <p>默认密码：ateez123</p>
+          <p>提示：ATEEZ第一首专辑主打歌的英文名（小写不加空格）</p>
         </div>
       </div>
     </div>

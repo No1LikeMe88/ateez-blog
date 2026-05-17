@@ -7,7 +7,7 @@ interface AuthState {
   logout: () => void;
 }
 
-const PASSWORD = 'ateez123'; // 默认密码，你可以修改
+const PASSWORD = 'pirateking'; // 密码已更新
 
 export const useAuthStore = create<AuthState>()(
   persist(
