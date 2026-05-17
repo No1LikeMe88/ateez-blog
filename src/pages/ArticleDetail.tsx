@@ -7,7 +7,7 @@ const ArticleDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const article = id ? getArticleById(id) : undefined;
-  const showAdultBadge = article?.isAdult || (article?.title.includes('M】') ?? false);
+  const showAdultBadge = article?.isAdult || /【[^】]*M】/.test(article?.title || '');
 
   if (!article) {
     return (
