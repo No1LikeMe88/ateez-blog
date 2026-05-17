@@ -6,7 +6,7 @@ interface ArticleCardProps {
 }
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
-  const showAdultBadge = article.isAdult || /【[^】]*M】/.test(article.title);
+  const showAdultBadge = article.isAdult || article.title.includes('M】');
   
   return (
     <Link 
