@@ -1,9 +1,25 @@
 import ArticleCard from '../components/ArticleCard';
 import { articles } from '../data/articles';
+import { useAuthStore } from '../hooks/useAuth';
 
 export default function Home() {
+  const { logout } = useAuthStore();
+
   return (
     <div className="min-h-screen bg-gray-50 font-serif">
+      {/* Navigation */}
+      <nav className="bg-white shadow-sm sticky top-0 z-20">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h2 className="text-xl font-bold text-gray-900">ATEEZ 甲板后厨</h2>
+          <button
+            onClick={logout}
+            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            退出登录
+          </button>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative h-[500px]">
         <div 
