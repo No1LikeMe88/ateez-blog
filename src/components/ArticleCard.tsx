@@ -6,6 +6,8 @@ interface ArticleCardProps {
 }
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
+  const showAdultBadge = article.isAdult || article.title.includes('M】');
+  
   return (
     <Link 
       to={`/article/${article.id}`}
@@ -28,7 +30,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors font-serif">
           {article.title}
-          {article.isAdult && (
+          {showAdultBadge && (
             <span className="text-xs text-red-600 ml-2 font-serif">18+</span>
           )}
         </h3>

@@ -7,6 +7,7 @@ const ArticleDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const article = id ? getArticleById(id) : undefined;
+  const showAdultBadge = article?.isAdult || (article?.title.includes('M】') ?? false);
 
   if (!article) {
     return (
@@ -50,7 +51,7 @@ const ArticleDetail = () => {
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
             {article.title}
-            {article.isAdult && (
+            {showAdultBadge && (
               <span className="text-base text-red-600 ml-3 font-serif">18+</span>
             )}
           </h1>
