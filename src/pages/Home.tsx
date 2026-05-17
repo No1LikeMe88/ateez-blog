@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import ArticleCard from '../components/ArticleCard';
-import NoticeModal from '../components/NoticeModal';
 import { articles } from '../data/articles';
 import { useAuthStore } from '../hooks/useAuth';
 
@@ -15,7 +14,7 @@ export default function Home() {
       article.title.toLowerCase().includes(query) ||
       article.summary.toLowerCase().includes(query)
     );
-  };
+  });
 
   const sortedArticles = [...filteredArticles].sort((a, b) => {
     if (a.isPinned && !b.isPinned) return -1;
@@ -25,7 +24,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-serif">
-      <NoticeModal />
       {/* Navigation */}
       <nav className="bg-white shadow-sm sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row gap-4 md:gap-8 items-center">
