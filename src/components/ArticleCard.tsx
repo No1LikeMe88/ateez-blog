@@ -26,8 +26,11 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           <span>·</span>
           <span>{article.readTime}</span>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors font-serif">
           {article.title}
+          {article.isAdult && (
+            <span className="text-xs text-red-600 ml-2 font-serif">18+</span>
+          )}
         </h3>
         <p className="text-gray-600 line-clamp-2">
           {article.summary}

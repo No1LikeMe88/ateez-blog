@@ -48,8 +48,11 @@ const ArticleDetail = () => {
             <span>·</span>
             <span>{article.readTime}</span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
             {article.title}
+            {article.isAdult && (
+              <span className="text-base text-red-600 ml-3 font-serif">18+</span>
+            )}
           </h1>
           <div className="h-72 rounded-xl overflow-hidden">
             <img 

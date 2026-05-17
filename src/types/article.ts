@@ -7,4 +7,5 @@ export interface Article {
   coverImage: string;
   publishDate: string;
   readTime: string;
+  isAdult?: boolean;
 }
