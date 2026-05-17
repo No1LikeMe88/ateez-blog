@@ -3,13 +3,13 @@ import { articles } from '../data/articles';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-serif">
       {/* Hero Section */}
       <section className="relative h-[500px]">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: `url(https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=sunset%20over%20ocean%20sea%20horizon%20dramatic%20sky%20clouds%20pirate%20ship%20silhouette%20epic&image_size=landscape_16_9&t=${Date.now()})` 
+            backgroundImage: 'url(/hero-bg.jpg)' 
           }}
         >
           <div className="absolute inset-0 bg-black/30" />

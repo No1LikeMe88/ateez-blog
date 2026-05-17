@@ -10,7 +10,7 @@ const ArticleDetail = () => {
 
   if (!article) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center font-serif">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">文章未找到</h1>
           <Link 
@@ -26,7 +26,7 @@ const ArticleDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-serif">
       {/* Navigation */}
       <nav className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4">
