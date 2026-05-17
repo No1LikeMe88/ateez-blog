@@ -24,6 +24,9 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       )}
       <div className="p-6 font-serif">
         <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
+          {article.isPinned && (
+            <span className="text-yellow-600 font-bold">🔝 置顶</span>
+          )}
           <span>{article.publishDate}</span>
           <span>·</span>
           <span>{article.readTime}</span>

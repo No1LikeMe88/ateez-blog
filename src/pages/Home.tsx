@@ -41,7 +41,11 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-gray-900 mb-10">最新文章</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article) => (
+          {[...articles].sort((a, b) => {
+            if (a.isPinned && !b.isPinned) return -1;
+            if (!a.isPinned && b.isPinned) return 1;
+            return 0;
+          }).map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
         </div>

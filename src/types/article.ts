@@ -8,4 +8,5 @@ export interface Article {
   publishDate: string;
   readTime: string;
   isAdult?: boolean;
+  isPinned?: boolean;
 }
