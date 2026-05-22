@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ArticleCard from '../components/ArticleCard';
 import { articles } from '../data/articles';
 import { useAuthStore } from '../hooks/useAuth';
@@ -50,12 +51,26 @@ export default function Home() {
               )}
             </div>
           </div>
-          <button
-            onClick={logout}
-            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            退出登录
-          </button>
+          <div className="flex gap-4 items-center">
+            <Link
+              to="/submit"
+              className="text-sm bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors"
+            >
+              ✍️ 投稿
+            </Link>
+            <Link
+              to="/admin"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              管理后台
+            </Link>
+            <button
+              onClick={logout}
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              退出登录
+            </button>
+          </div>
         </div>
       </nav>
 
