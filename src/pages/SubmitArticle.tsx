@@ -41,7 +41,13 @@ export default function SubmitArticle() {
         contact: '',
       });
     } catch (err) {
-      setError(err instanceof Error ? err.message : '投稿失败，请稍后重试');
+      if (err instanceof Error) {
+        setError(`投稿失败: ${err.message}`);
+      } else if (typeof err === 'object' && err !== null && 'message' in err) {
+        setError(`投稿失败: ${String((err as { message: string }).message)}`);
+      } else {
+        setError('投稿失败，请稍后重试');
+      }
     } finally {
       setIsSubmitting(false);
     }
