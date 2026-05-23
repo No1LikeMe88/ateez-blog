@@ -90,6 +90,21 @@ export default function AdminPanel() {
     return new Date(dateString).toLocaleString('zh-CN');
   };
 
+  const copyToClipboard = async (submission: Submission) => {
+    const content = `标题：${submission.title}
+作者：${submission.author}
+${submission.is_adult ? '⚠️ 18+内容\n' : ''}正文：
+${submission.content}
+${submission.contact ? `\n联系方式：${submission.contact}` : ''}`;
+
+    try {
+      await navigator.clipboard.writeText(content);
+      alert('✅ 已复制到剪贴板！');
+    } catch (err) {
+      alert('复制失败，请手动复制');
+    }
+  };
+
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-gray-50 font-serif flex items-center justify-center">
@@ -206,7 +221,13 @@ export default function AdminPanel() {
               </div>
             )}
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
+              <button
+                onClick={() => copyToClipboard(selectedSubmission)}
+                className="px-4 py-2 rounded-lg font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+              >
+                📋 一键复制全部内容
+              </button>
               <button
                 onClick={() => updateStatus(selectedSubmission.id, 'approved')}
                 className={`px-4 py-2 rounded-lg font-medium ${
