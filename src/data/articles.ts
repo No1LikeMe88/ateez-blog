@@ -22,8 +22,7 @@ export const articles: Article[] = [
     `,
     coverImage: '',
     publishDate: '2026-05-17',
-    readTime: '1 分钟阅读',
-    isPinned: true
+    readTime: '1 分钟阅读'
   },
   {
     id: '1',
@@ -763,7 +762,8 @@ export const articles: Article[] = [
     `,
     coverImage: '',
     publishDate: '2026-05-23',
-    readTime: '2 分钟阅读'
+    readTime: '2 分钟阅读',
+    isPinned: true
   }
 ];
 
