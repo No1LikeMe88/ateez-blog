@@ -58,12 +58,6 @@ export default function Home() {
             >
               ✍️ 投稿
             </Link>
-            <Link
-              to="/admin"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              管理后台
-            </Link>
             <button
               onClick={logout}
               className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
